@@ -80,6 +80,10 @@ public class Bibliotheque implements Serializable
 			} while ((age<=3) | (age>=110));
 			String adresse = EntreesSorties.lireChaine("Entrez l'adresse :");
 			String tel = EntreesSorties.lireChaine("Entrez le numero de telephone :");
+                        while (tel.length() != 10){
+                            EntreesSorties.afficherMessage("Le numéro de téléphone est erroné. Il doit contenir 10 caratères. Merci de le ressaisir :");
+                            tel = EntreesSorties.lireChaine();
+                        }
 			EntreesSorties.afficherMessage("Fin de saisie");
 			
 			L = new Lecteur(nom, prenom, numLecteur, dateNaiss, adresse, tel);

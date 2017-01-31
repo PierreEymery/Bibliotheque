@@ -14,13 +14,13 @@ public class Lecteur implements Serializable
 		//Attributs
 	// -----------------------------------------------
 	
-		private String _nom;
-		private String _prenom;
-		private Integer _numLecteur;
-		private GregorianCalendar _dateNaiss;
-		private String _adresse;
-		private String _tel;
-	
+		private Integer numLecteur;
+		private String nomLecteur;
+		private String prenomLecteur;
+                private String adresseLecteur;
+                private String numTelLecteur;
+		private GregorianCalendar dateNaiss;
+			
 	
 	
 	// -----------------------------------------------
@@ -46,27 +46,27 @@ public class Lecteur implements Serializable
 		// -----------------------------------------------
 	
 		public String getNom() {
-			return _nom;
+			return nomLecteur;
 		}
 
 		public String getPrenom() {
-			return _prenom;
+			return prenomLecteur;
 		}
 
 		public Integer getNumLecteur() {
-			return _numLecteur;
+			return numLecteur;
 		}
 		
 		public GregorianCalendar getDateNaiss() {
-			return _dateNaiss;
+			return dateNaiss;
 		}
 
 		public String getAdresse() {
-			return _adresse;
+			return adresseLecteur;
 		}
 
 		public String getTel() {
-			return _tel;
+			return numTelLecteur;
 		}
 		// -----------------------------------------------
 			// Methodes
@@ -94,12 +94,12 @@ public class Lecteur implements Serializable
 			Integer age;
 			GregorianCalendar dateNaissComp;
 			GregorianCalendar dateActuelle = new GregorianCalendar();
-			dateNaissComp = new GregorianCalendar(dateActuelle.get(GregorianCalendar.YEAR), _dateNaiss.get(GregorianCalendar.MONTH), _dateNaiss.get(GregorianCalendar.DATE));
+			dateNaissComp = new GregorianCalendar(dateActuelle.get(GregorianCalendar.YEAR), dateNaiss.get(GregorianCalendar.MONTH), dateNaiss.get(GregorianCalendar.DATE));
 			if(dateNaissComp.before(dateActuelle)){
-				age=dateActuelle.get(GregorianCalendar.YEAR)-_dateNaiss.get(GregorianCalendar.YEAR);
+				age=dateActuelle.get(GregorianCalendar.YEAR)-dateNaiss.get(GregorianCalendar.YEAR);
 			}
 			else{
-				age=dateActuelle.get(GregorianCalendar.YEAR)-_dateNaiss.get(GregorianCalendar.YEAR)-1;
+				age=dateActuelle.get(GregorianCalendar.YEAR)-dateNaiss.get(GregorianCalendar.YEAR)-1;
 			}
 			return age;
 		}
@@ -115,27 +115,27 @@ public class Lecteur implements Serializable
 		// -----------------------------------------------
 
 		private void setNom(String nom) {
-			this._nom = nom;
+			this.nomLecteur = nom;
 		}
 
 		private void setPrenom(String prenom) {
-			this._prenom = prenom;
+			this.prenomLecteur = prenom;
 		}
 		
 		private void setNumLecteur(Integer numLecteur) {
-			this._numLecteur = numLecteur;
+			this.numLecteur = numLecteur;
 		}
 
 		private void setDateNaiss(GregorianCalendar dateNaiss) {
-			this._dateNaiss = dateNaiss;
+			this.dateNaiss = dateNaiss;
 		}
 
 		private void setAdresse(String adresse) {
-			this._adresse = adresse;
+			this.adresseLecteur = adresse;
 		}
 
 		private void setTel(String tel) {
-			this._tel = tel;
+                        this.numTelLecteur = tel;
 		}
 		
 		
