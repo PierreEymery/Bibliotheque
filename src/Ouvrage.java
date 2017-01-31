@@ -1,5 +1,6 @@
 
 import java.util.GregorianCalendar;
+import java.util.TreeSet;
 
 public class Ouvrage {
 
@@ -9,7 +10,7 @@ public class Ouvrage {
     private GregorianCalendar dateParution;
     private String nomAuteur;
     private Public publicCible;
-    private TreeSet<Exemplaire> exemplaireTreeSet;
+    private TreeSet<Exemplaire> exemplaires;
 
     Ouvrage(String numISBN, String titreOuvrage, String nomEditeur, String nomAuteur, GregorianCalendar dateParution, Public publicCible) {
         this.setNumISBN(numISBN);
@@ -18,7 +19,7 @@ public class Ouvrage {
         this.setNomAuteur(nomAuteur);
         this.setDateParution(dateParution);
         this.setPublicCible(publicCible);
-        exemplaireTreeSet = new TreeSet<>();
+        exemplaires = new TreeSet<>();
     }
 
     public ArrayList<Exemplaire> getExemplaires() {
@@ -50,6 +51,6 @@ public class Ouvrage {
     }
 
     public void setExemplaireTreeSet(TreeSet<Exemplaire> exemplaireTreeSet) {
-        this.exemplaireTreeSet = exemplaireTreeSet;
+        this.exemplaires = exemplaireTreeSet;
     }
 }
